@@ -9,6 +9,7 @@ import {
   combineReducers,
   applyMiddleware,
 } from 'redux';
+import { createLogger } from 'redux-logger';
 import { Provider } from 'react-redux';
 
 // Router
@@ -26,16 +27,25 @@ import {
 import reducers from './reducers/index';
 import './App.css';
 
-const history = createHistory();
+const loggerMiddleware = createLogger({
+  predicate: () => process.env.NODE_ENV !== 'production',
+});
 
-const middleware = routerMiddleware(history);
+const history = createHistory();
+const reduxRouterMiddleware = routerMiddleware(history);
+
+const initialState = {};
 
 const store = createStore(
   combineReducers({
     ...reducers,
     router: routerReducer,
   }),
-  applyMiddleware(middleware),
+  initialState,
+  applyMiddleware(
+    reduxRouterMiddleware,
+    loggerMiddleware,
+  ),
 );
 
 const logo = require('./logo.svg');
