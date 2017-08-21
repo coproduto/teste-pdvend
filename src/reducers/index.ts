@@ -5,4 +5,3 @@ import dummyReducers from './dummy';
 export default {
   ...dummyReducers,
 };
-
