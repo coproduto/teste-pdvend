@@ -27,6 +27,16 @@ import {
 import reducers from './reducers/index';
 import './App.css';
 
+// imports de componentes
+import {
+  Grid,
+  Row,
+} from 'react-bootstrap';
+import {
+  Friends,
+  Chat,
+} from './components/index';
+
 const loggerMiddleware = createLogger({
   predicate: () => process.env.NODE_ENV !== 'production',
 });
@@ -48,22 +58,17 @@ const store = createStore(
   ),
 );
 
-const logo = require('./logo.svg');
-
 class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
         <ConnectedRouter history={history}>  
-          <div className="App">
-            <div className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
-              <h2>Welcome to React</h2>
-            </div>
-            <p className="App-intro">
-              To get started, edit <code>src/App.tsx</code> and save to reload.
-            </p>
-          </div>
+          <Grid fluid={true} className="App">
+            <Row className="full-height">
+              <Friends xs={12} sm={4} md={3} />
+              <Chat xsHidden={true} sm={8} md={9} />
+            </Row>
+          </Grid>
         </ConnectedRouter>
       </Provider>
     );

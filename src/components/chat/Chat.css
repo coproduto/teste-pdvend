@@ -1,0 +1,16 @@
+.chat-area {
+  height: 100%;
+  background-color: blue;
+}
+
+.message-area-container {
+  height: calc(100% - 190px);
+}
+
+.message-input-container {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 190px;
+}
