@@ -28,14 +28,10 @@ import reducers from './reducers/index';
 import './App.css';
 
 // imports de componentes
-import {
-  Grid,
-  Row,
-} from 'react-bootstrap';
-import {
-  Friends,
-  Chat,
-} from './components/index';
+import { Interface } from './components/index';
+
+// container do app
+import AppContainer from './containers/App';
 
 const loggerMiddleware = createLogger({
   predicate: () => process.env.NODE_ENV !== 'production',
@@ -58,17 +54,14 @@ const store = createStore(
   ),
 );
 
+const AppInterface = AppContainer(Interface);
+
 class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <ConnectedRouter history={history}>  
-          <Grid fluid={true} className="App">
-            <Row className="full-height">
-              <Friends xs={12} sm={4} md={3} />
-              <Chat xsHidden={true} sm={8} md={9} />
-            </Row>
-          </Grid>
+        <ConnectedRouter history={history}>
+          <AppInterface />
         </ConnectedRouter>
       </Provider>
     );

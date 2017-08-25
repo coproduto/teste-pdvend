@@ -2,6 +2,7 @@
  * para facilitar importação
  */
 
+import Interface from './interface/Interface';
 import Friends from './friends/Friends';
 import SearchField from './searchField/SearchField';
 import FriendList from './friendList/FriendList';
@@ -11,6 +12,7 @@ import MessageInput from './messageInput/MessageInput';
 import MessageArea from './messageArea/MessageArea';
 
 export {
+  Interface,
   Friends,
   Chat,
   SearchField,

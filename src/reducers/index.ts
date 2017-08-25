@@ -1,7 +1,7 @@
 /* reducers/index.ts: Listagem de todos os reducers */
 
-import dummyReducers from './dummy';
+import appReducers from './app';
 
 export default {
-  ...dummyReducers,
+  ...appReducers,
 };

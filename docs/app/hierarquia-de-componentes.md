@@ -2,6 +2,17 @@
 
 Aqui está documentada a hierarquia de componentes que forma o aplicativo.
 
+O aplicativo é inicializado com a renderização do componente App, definido
+no arquivo `src/App.tsx`. Esse componente, todavia, apenas realiza a
+configuração do aplicativo e passa o controle para o componente Interface,
+definido em `src/components/interface/Interface.tsx`. Esse componente, por
+sua vez, é responsável por toda a renderização da interface do aplicativo,
+sendo ele formado por vários subcomponentes, cada um responsável por uma
+parte da interface.
+
+Cada um dos componentes descritos abaixo pode ser encontrado em sua
+respectiva subpasta da pasta `src/components/`.
+
 Em primeiro nível, temos dois componentes:
 
 - O componente [`Friends`](#friends) renderiza a lista de contatos
