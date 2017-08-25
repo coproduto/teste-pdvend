@@ -14,16 +14,16 @@ Os componentes de primeiro nível subdividem-se da seguinte forma:
 ## Friends
 
 - O componente `Friends` está dividido nos seguintes componentes:
-    * O componente [`SearchField`](#searchField) renderiza o campo de
+    * O componente [`SearchField`](#searchfield) renderiza o campo de
 busca de contatos.
-    * O componente [`FriendList`](#friendList) renderiza a lista de contatos.
+    * O componente [`FriendList`](#friendlist) renderiza a lista de contatos.
 
 ## Chat
 
 - O componente `Chat` está dividido nos seguintes componentes:
-    * O componente [`TitleBar`](#titleBar) renderiza a barra de título.
-    * O componente [`MessageArea`](#messageArea) renderiza as mensagens.
-    * O componente [`MessageInput`](#messageInput) renderiza a caixa de texto
+    * O componente [`TitleBar`](#titlebar) renderiza a barra de título.
+    * O componente [`MessageArea`](#messagearea) renderiza as mensagens.
+    * O componente [`MessageInput`](#messageinput) renderiza a caixa de texto
 para escrita de nova mensagem.
 
 Finalmente, os componentes a seguir implementam a interação com o usuário:
