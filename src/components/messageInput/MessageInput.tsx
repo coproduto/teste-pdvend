@@ -8,7 +8,11 @@ import './MessageInput.css';
 
 interface InputProps extends BootstrapMeasurements { }
 
-const MessageInput = ({ xsHidden, sm, md }: BootstrapMeasurements): React.ReactElement<InputProps> => (
+const MessageInput = ({
+  xsHidden,
+  sm,
+  md,
+}: BootstrapMeasurements): React.ReactElement<InputProps> => (
     <Col xsHidden={xsHidden} sm={sm} md={md} className="message-input-area" />
 );
 

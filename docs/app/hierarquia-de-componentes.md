@@ -20,4 +20,4 @@ Os componentes de primeiro nível subdividem-se da seguinte forma:
     * O componente `MessageInput` renderiza a caixa de texto para escrita  
 de nova mensagem.
 
-As subdivisões menores ainda serão definidas.
+

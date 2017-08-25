@@ -2,3 +2,13 @@
   height: 100%;
   background-color: red;
 }
+
+.search-field-container {
+  height: 105px;
+  background-color: yellow;
+}
+
+.friends-list-container {
+  height: calc(100% - 105px);
+  background-color: aqua;
+}

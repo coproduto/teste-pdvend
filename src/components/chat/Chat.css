@@ -3,8 +3,16 @@
   background-color: blue;
 }
 
+.title-bar-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 105px;
+}
+
 .message-area-container {
-  height: calc(100% - 190px);
+  height: calc(100% - 190px - 105px);
 }
 
 .message-input-container {
