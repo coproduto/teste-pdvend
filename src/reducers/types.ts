@@ -2,4 +2,5 @@
 
 export interface AppState {
   isInChat: boolean;
+  searchText: string;
 }

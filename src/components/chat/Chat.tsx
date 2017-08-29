@@ -6,11 +6,9 @@ import {
   Col,
 } from 'react-bootstrap';
 import { BootstrapMeasurements } from '../types';
-import {
-  TitleBar,
-  MessageInput,
-  MessageArea,
-} from '../index';
+import TitleBar from '../titleBar/TitleBar';
+import MessageInput from '../messageInput/MessageInput';
+import MessageArea from '../messageArea/MessageArea';
 
 import './Chat.css';
 

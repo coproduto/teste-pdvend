@@ -3,7 +3,7 @@
 import {
   Action,
   ActionType,
-} from '../types';
+} from './types';
 
 export const startChat = (): Action => ({
   type: ActionType.START_CHAT,
