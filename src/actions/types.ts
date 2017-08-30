@@ -1,14 +1,18 @@
 /* actions/types.ts: Descreve os tipos de ações possíveis */
 
+import { Message } from '../components/types';
+
 export type Action =
   | StartChatAction
   | EndChatAction
   | SetSearchTextAction
   | SetMessageTextAction
+  | SendMessageAction
   | UnknownAction;
 
 export interface StartChatAction {
   type: ActionType.START_CHAT;
+  payload: number; // identificador do usuário
 }
 
 export interface EndChatAction {
@@ -25,6 +29,11 @@ export interface SetMessageTextAction {
   payload: string;
 }
 
+export interface SendMessageAction {
+  type: ActionType.SEND_MESSAGE;
+  payload: Message;
+}
+
 export interface UnknownAction {
   type: ActionType.OTHER_ACTION;
 }
@@ -34,5 +43,6 @@ export enum ActionType {
   END_CHAT = 'END_CHAT',
   SET_SEARCH_TEXT = 'SET_SEARCH_TEXT',
   SET_MESSAGE_TEXT = 'SET_MESSAGE_TEXT',
+  SEND_MESSAGE = 'SEND_MESSAGE',
   OTHER_ACTION = '__fictional_action__',
 }

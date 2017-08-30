@@ -20,6 +20,10 @@ it('renders without crashing', () => {
             type: ActionType.SET_MESSAGE_TEXT,
             payload: str,
           })}
+          sendMessage={msg => ({
+            type: ActionType.SEND_MESSAGE,
+            payload: msg,
+          })}
         />
       </Grid>
     ),

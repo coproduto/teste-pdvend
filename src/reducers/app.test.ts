@@ -10,7 +10,7 @@ describe('isInChat reducer', () => {
   });
 
   it('returns true on chat start', () => {
-    const newState = isInChat(false, { type: ActionType.START_CHAT });
+    const newState = isInChat(false, { type: ActionType.START_CHAT, payload: 1 });
     expect(newState).toBe(true);
   });
 

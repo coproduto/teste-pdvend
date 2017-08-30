@@ -4,8 +4,14 @@ import {
   Action,
   ActionType,
 } from './types';
+import { Message } from '../components/types';
 
 export const setMessageText = (str: string): Action => ({
   type: ActionType.SET_MESSAGE_TEXT,
   payload: str,
+});
+
+export const sendMessage = (msg: Message): Action => ({
+  type: ActionType.SEND_MESSAGE,
+  payload: msg,
 });

@@ -10,6 +10,7 @@ import './MessageInput.css';
 interface InputProps extends BootstrapMeasurements {
   messageText: string;
   setMessageText: (str: string) => Action;
+  sendMessage: (str: string) => Action;
 }
 
 const MessageInput = ({
@@ -19,6 +20,7 @@ const MessageInput = ({
   md,
   messageText,
   setMessageText,
+  sendMessage,
 }: InputProps): React.ReactElement<InputProps> => (
     <Col
       xsHidden={xsHidden}
@@ -30,6 +32,13 @@ const MessageInput = ({
       <input
         value={messageText}
         onChange={event => setMessageText(event.target.value)}
+        onKeyPress={event => {
+          if (event && event.key === 'Enter') {
+            return sendMessage(messageText);
+          } else {
+            return null;
+          }
+        }}
         className="message-input"
       />
     </Col>

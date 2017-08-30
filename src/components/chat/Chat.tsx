@@ -9,6 +9,10 @@ import { BootstrapMeasurements } from '../types';
 import TitleBar from '../titleBar/TitleBar';
 import MessageInput from '../messageInput/MessageInput';
 import MessageArea from '../messageArea/MessageArea';
+import {
+  Message,
+  SenderType,
+} from '../types';
 import { Action } from '../../actions/types';
 
 import './Chat.css';
@@ -16,6 +20,7 @@ import './Chat.css';
 interface ChatProps extends BootstrapMeasurements {
   messageText: string;
   setMessageText: (str: string) => Action;
+  sendMessage: (msg: Message) => Action;
 }
 
 const Chat = ({
@@ -25,6 +30,7 @@ const Chat = ({
   md,
   messageText,
   setMessageText,
+  sendMessage,
 }: ChatProps): React.ReactElement<ChatProps> => (
   <Col xsHidden={xsHidden} xs={xs} sm={sm} md={md} className="chat-area">
     <Row className="title-bar-container">
@@ -40,6 +46,10 @@ const Chat = ({
         md={12}
         messageText={messageText}
         setMessageText={setMessageText}
+        sendMessage={str => sendMessage({
+          sender: { type: SenderType.SELF },
+          content: str,
+        })}
       />
     </Row>
   </Col>  

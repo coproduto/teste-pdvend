@@ -5,8 +5,9 @@ import {
   ActionType,
 } from './types';
 
-export const startChat = (): Action => ({
+export const startChat = (id: number): Action => ({
   type: ActionType.START_CHAT,
+  payload: id,
 });
 
 export const endChat = (): Action => ({
