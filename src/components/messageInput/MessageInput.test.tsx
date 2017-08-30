@@ -4,6 +4,7 @@ import {
   Grid,
   Row,
 } from 'react-bootstrap';
+import { ActionType } from '../../actions/types';
 
 import MessageInput from './MessageInput';
 
@@ -13,7 +14,16 @@ it('renders without crashing', () => {
     (
       <Grid>
         <Row>  
-          <MessageInput xsHidden={true} sm={12} md={12} />
+        <MessageInput
+          xs={12}
+          sm={12}
+          md={12}
+          messageText=""
+          setMessageText={str => ({
+            type: ActionType.SET_MESSAGE_TEXT,
+            payload: str,
+          })}
+        />
         </Row>
       </Grid>
     ),

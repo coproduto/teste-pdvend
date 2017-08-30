@@ -3,4 +3,5 @@
 export interface AppState {
   isInChat: boolean;
   searchText: string;
+  messageText: string;
 }

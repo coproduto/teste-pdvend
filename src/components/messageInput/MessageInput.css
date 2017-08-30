@@ -6,3 +6,13 @@
   right: 0;
   height: 100%;
 }
+
+.message-input {
+  position: relative;
+  height: 30%;
+  width: 80%;
+  top: 35%;
+  bottom: 35%;
+  left: 10%;
+  right: 10%;
+}

@@ -18,13 +18,14 @@ interface FriendsProps extends BootstrapMeasurements {
 }
 
 const Friends = ({
+  xsHidden,
   xs,
   sm,
   md,
   searchText,
   setSearchText,
 }: FriendsProps): React.ReactElement<FriendsProps> => (
-  <Col sm={sm} md={md} xs={xs} className="friends-area">
+  <Col xsHidden={xsHidden} sm={sm} md={md} xs={xs} className="friends-area">
     <Row className="search-field-container">
       <SearchField
         xs={12}

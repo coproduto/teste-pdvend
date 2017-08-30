@@ -17,7 +17,7 @@ it('renders without crashing', () => {
           searchText=""
           setSearchText={str => ({
             type: ActionType.SET_SEARCH_TEXT,
-            payload: str
+            payload: str,
           })}
         />
       </Grid>

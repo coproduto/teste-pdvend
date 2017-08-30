@@ -8,12 +8,14 @@ import {
 import Friends from '../friends/Friends';
 import Chat from '../chat/Chat';
 import FriendsContainer from '../../containers/Friends';
+import ChatContainer from '../../containers/Chat';
 
 interface InterfaceProps {
   isInChat: boolean;
 }
 
 const FriendsPanel = FriendsContainer(Friends);
+const ChatPanel = ChatContainer(Chat);
 
 class Interface extends React.Component<InterfaceProps> {
   render() {
@@ -21,7 +23,7 @@ class Interface extends React.Component<InterfaceProps> {
       <Grid fluid={true} className="App">
         <Row className="full-height">
           <FriendsPanel xsHidden={this.props.isInChat} xs={12} sm={4} md={3} />
-          <Chat xsHidden={!this.props.isInChat} xs={12} sm={8} md={9} />
+          <ChatPanel xsHidden={!this.props.isInChat} xs={12} sm={8} md={9} />
         </Row>
       </Grid>
     );

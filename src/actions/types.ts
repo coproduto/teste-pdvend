@@ -4,6 +4,7 @@ export type Action =
   | StartChatAction
   | EndChatAction
   | SetSearchTextAction
+  | SetMessageTextAction
   | UnknownAction;
 
 export interface StartChatAction {
@@ -19,6 +20,11 @@ export interface SetSearchTextAction {
   payload: string;
 }
 
+export interface SetMessageTextAction {
+  type: ActionType.SET_MESSAGE_TEXT;
+  payload: string;
+}
+
 export interface UnknownAction {
   type: ActionType.OTHER_ACTION;
 }
@@ -27,5 +33,6 @@ export enum ActionType {
   START_CHAT = 'START_CHAT',
   END_CHAT = 'END_CHAT',
   SET_SEARCH_TEXT = 'SET_SEARCH_TEXT',
+  SET_MESSAGE_TEXT = 'SET_MESSAGE_TEXT',
   OTHER_ACTION = '__fictional_action__',
 }
