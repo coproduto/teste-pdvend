@@ -6,7 +6,6 @@ import {
     OtherMessageSender,
 } from '../components/types';
 
-
 describe('messageText reducer', () => {
   const messageText = chatReducers.messageText;
 
