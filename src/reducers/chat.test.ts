@@ -1,6 +1,11 @@
 import chatReducers from './chat';
 import { ActionType } from '../actions/types';
-import { SenderType } from '../components/types';
+import {
+    SenderType,
+    OwnMessageSender,
+    OtherMessageSender,
+} from '../components/types';
+
 
 describe('messageText reducer', () => {
   const messageText = chatReducers.messageText;
@@ -32,21 +37,21 @@ describe('messages reducer', () => {
       {
         sender: {
           type: SenderType.OTHER,
-          id: 1
-        },
+          id: 1,
+        } as OtherMessageSender,
         content: 'test message by other',
       },
       {
         sender: {
           type: SenderType.SELF,
-        },
+        } as OwnMessageSender,
         content: 'test message by self',
       },
     ];
     const message = {
       sender: {
         type: SenderType.SELF,
-      },
+      } as OwnMessageSender,
       content: 'test sending new message by self',
     };
       

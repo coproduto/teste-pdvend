@@ -9,7 +9,7 @@ export interface BootstrapMeasurements {
 }
 
 export enum SenderType {
-  SELF,
+  SELF = 0,
   OTHER,
 }
 
@@ -22,9 +22,7 @@ export interface OtherMessageSender {
   id: number;
 }
 
-export type MessageSender = OwnMessageSender | OtherMessageSender;
-
 export interface Message {
-  sender: MessageSender;
+  sender: OwnMessageSender | OtherMessageSender;
   content: string;
 }
