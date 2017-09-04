@@ -9,4 +9,6 @@ export interface AppState {
   friends: SimulatedFriend[];
   messageText: string;
   messages: Message[];
+  responder: SimulatedFriend | null;
+  shouldSimulateAnswer: boolean;
 }

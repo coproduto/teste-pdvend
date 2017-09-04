@@ -1,4 +1,4 @@
-/* actions/types.ts: Descreve os tipos de ações possíveis */
+ /* actions/types.ts: Descreve os tipos de ações possíveis */
 
 import { Message } from '../components/types';
 

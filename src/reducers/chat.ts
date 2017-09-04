@@ -8,6 +8,19 @@ import {
   SenderType,
   Message,
 } from '../components/types';
+import { simulatedFriendMap } from '../lib/friends/index';
+import { SimulatedFriend } from '../lib/friends/types';
+
+const responder = (state: SimulatedFriend | null = null, action: Action) => {
+  switch (action.type) {
+    case ActionType.START_CHAT:
+      return simulatedFriendMap.get(action.payload) || null;
+    case ActionType.END_CHAT:
+      return null;
+    default:
+      return state;
+  }
+};
 
 const messageText = (state = '', action: Action) => {
   switch (action.type) {
@@ -38,7 +51,21 @@ const messages = (state: Message[] = [], action: Action) => {
   }
 };
 
+const shouldSimulateAnswer = (state = false, action: Action) => {
+  switch (action.type) {
+    case ActionType.SEND_MESSAGE:
+      if (action.payload.sender.type === SenderType.SELF) {
+        return true;
+      }
+      return false;
+    default:
+      return state;
+  }
+};
+
 export default {
   messageText,
   messages,
+  responder,
+  shouldSimulateAnswer,
 };

@@ -9,6 +9,7 @@ import { BootstrapMeasurements } from '../types';
 import TitleBar from '../titleBar/TitleBar';
 import MessageInput from '../messageInput/MessageInput';
 import MessageArea from '../messageArea/MessageArea';
+import Responder from '../../containers/Responder';
 import {
   Message,
   SenderType,
@@ -39,32 +40,34 @@ const Chat = ({
   setMessageText,
   sendMessage,
 }: ChatProps): React.ReactElement<ChatProps> => (
-  <Col xsHidden={xsHidden} xs={xs} sm={sm} md={md} className="chat-area">
-    <Row className="title-bar-container">
-      <TitleBar xs={12} sm={12} md={12} />
-    </Row>
-    <Row className="message-area-container">
-      <MessageArea
-        xs={12}
-        sm={12}
-        md={12}
-        messages={messages}
-      />
-    </Row>
-    <Row className="message-input-container">
-      <MessageInput
-        xs={12}
-        sm={12}
-        md={12}
-        messageText={messageText}
-        setMessageText={setMessageText}
-        sendMessage={str => sendMessage({
-          sender: { type: SenderType.SELF },
-          content: str,
-        })}
-      />
-    </Row>
-  </Col>  
+  <Responder>
+    <Col xsHidden={xsHidden} xs={xs} sm={sm} md={md} className="chat-area">
+      <Row className="title-bar-container">
+        <TitleBar xs={12} sm={12} md={12} />
+      </Row>
+      <Row className="message-area-container">
+        <MessageArea
+          xs={12}
+          sm={12}
+          md={12}
+          messages={messages}
+        />
+      </Row>
+      <Row className="message-input-container">
+        <MessageInput
+          xs={12}
+          sm={12}
+          md={12}
+          messageText={messageText}
+          setMessageText={setMessageText}
+          sendMessage={str => sendMessage({
+            sender: { type: SenderType.SELF },
+            content: str,
+          })}
+        />
+      </Row>
+    </Col>
+  </Responder>
 );
 
 export default Chat;
