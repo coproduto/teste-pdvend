@@ -14,10 +14,15 @@ it('renders without crashing', () => {
           xs={12}
           sm={12}
           md={12}
+          friends={[]}
           searchText=""
           setSearchText={str => ({
             type: ActionType.SET_SEARCH_TEXT,
             payload: str,
+          })}
+          startChat={id => ({
+            type: ActionType.START_CHAT,
+            payload: 0,
           })}
         />
       </Grid>

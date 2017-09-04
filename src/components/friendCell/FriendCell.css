@@ -1,0 +1,22 @@
+.friend-cell {
+  height: 130px;
+  line-height: 130px;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.friend-avatar {
+  display: inline-block;
+  vertical-align: middle;
+  height: 100px;
+  width: 100px;
+  background-color: white;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.friend-cell > span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}

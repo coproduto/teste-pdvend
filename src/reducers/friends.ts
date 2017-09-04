@@ -5,6 +5,9 @@ import {
   ActionType,
 } from '../actions/types';
 
+import { SimulatedFriend } from '../lib/friends/types';
+import defaultFriends from '../lib/friends/index';
+
 const searchText = (state = '', action: Action) => {
   switch (action.type) {
     case ActionType.SET_SEARCH_TEXT:
@@ -14,6 +17,13 @@ const searchText = (state = '', action: Action) => {
   }
 };
 
+const friends = (state: SimulatedFriend[] = defaultFriends, action: Action) => {
+  switch (action.type) {
+    default: return state; // os contatos não mudam - mas isso pode mudar.
+  }
+};
+
 export default {
   searchText,
+  friends,
 };

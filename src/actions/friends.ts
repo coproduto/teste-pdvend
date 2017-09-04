@@ -9,3 +9,8 @@ export const setSearchText = (str: string): Action => ({
   type: ActionType.SET_SEARCH_TEXT,
   payload: str,
 });
+
+export const startChat = (id: number): Action => ({
+  type: ActionType.START_CHAT,
+  payload: id,
+});

@@ -4,6 +4,7 @@ import {
   Grid,
   Row,
 } from 'react-bootstrap';
+import { ActionType } from '../../actions/types';
 
 import FriendList from './FriendList';
 
@@ -13,7 +14,16 @@ it('renders without crashing', () => {
     (
       <Grid>
         <Row>
-          <FriendList xs={12} sm={12} md={12} />
+          <FriendList
+            xs={12}
+            sm={12}
+            md={12}
+            friends={[]}
+            startChat={id => ({
+              type: ActionType.START_CHAT,
+              payload: 0,
+            })}
+          />
         </Row>
       </Grid>
     ),

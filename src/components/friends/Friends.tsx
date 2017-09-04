@@ -10,11 +10,15 @@ import SearchField from '../searchField/SearchField';
 import FriendList from '../friendList/FriendList';
 import { Action } from '../../actions/types';
 
+import { SimulatedFriend } from '../../lib/friends/types';
+
 import './Friends.css';
 
 interface FriendsProps extends BootstrapMeasurements {
+  friends: SimulatedFriend[];
   searchText: string;
   setSearchText: (str: string) => Action;
+  startChat: (id: number) => Action;
 }
 
 const Friends = ({
@@ -22,8 +26,10 @@ const Friends = ({
   xs,
   sm,
   md,
+  friends,
   searchText,
   setSearchText,
+  startChat,
 }: FriendsProps): React.ReactElement<FriendsProps> => (
   <Col xsHidden={xsHidden} sm={sm} md={md} xs={xs} className="friends-area">
     <Row className="search-field-container">
@@ -36,7 +42,13 @@ const Friends = ({
       />
     </Row>
     <Row className="friends-list-container">
-      <FriendList xs={12} sm={12} md={12} />
+    <FriendList
+      xs={12}
+      sm={12}
+      md={12}
+      friends={friends}
+      startChat={startChat}
+    />
     </Row>
   </Col>
 );

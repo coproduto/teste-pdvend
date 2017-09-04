@@ -11,4 +11,5 @@
 .friends-list-container {
   height: calc(100% - 105px);
   background-color: aqua;
+  overflow-y: auto;
 }
