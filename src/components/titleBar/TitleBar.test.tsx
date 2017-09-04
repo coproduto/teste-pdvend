@@ -4,6 +4,7 @@ import {
   Grid,
   Row,
 } from 'react-bootstrap';
+import { ActionType } from '../../actions/types';
 
 import TitleBar from './TitleBar';
 
@@ -13,7 +14,13 @@ it('renders without crashing', () => {
     (
       <Grid>
         <Row>
-          <TitleBar xsHidden={true} sm={12} md={12} />
+        <TitleBar
+          xsHidden={true}
+          sm={12}
+          md={12}
+          title="Test"
+          back={() => ({ type: ActionType.END_CHAT })}
+        />
         </Row>
       </Grid>
     ),

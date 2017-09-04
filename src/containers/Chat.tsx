@@ -12,17 +12,20 @@ import {
 import {
   setMessageText,
   sendMessage,
+  endChat,
 } from '../actions/chat';
 
 const mapStateToProps = (state: AppState, ownProps: BootstrapMeasurements) => ({
   messageText: state.messageText,
   messages: state.messages,
+  responder: state.responder,
   ...ownProps,
 });
 
 const mapDispatchToProps = (dispatch: Redux.Dispatch<AppState>) => ({
   setMessageText: (str: string) => dispatch(setMessageText(str)),
   sendMessage: (msg: Message) => dispatch(sendMessage(msg)),
+  endChat: () => dispatch(endChat()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps);

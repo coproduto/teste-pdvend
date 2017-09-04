@@ -47,6 +47,7 @@ const Friends = ({
       sm={12}
       md={12}
       friends={friends}
+      searchText={searchText}
       startChat={startChat}
     />
     </Row>

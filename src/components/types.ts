@@ -6,6 +6,9 @@ export interface BootstrapMeasurements {
   md?: number;
   lg?: number;
   xsHidden?: boolean;
+  smHidden?: boolean;
+  mdHidden?: boolean;
+  lgHidden?: boolean;
 }
 
 export enum SenderType {

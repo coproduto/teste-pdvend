@@ -1,4 +1,26 @@
 .title-bar {
   background-color: crimson;
   height: 100%;
+  vertical-align: middle;
+}
+
+.title-bar-back:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  width: 1px;
+}
+
+.title-bar-back {
+  display: inline-block;
+  height: 50px;
+}
+
+.title-bar-back img {
+  height: 100%;
+  margin-right: 20px;
+}
+
+.title-bar-title {
+  display: inline-block;
 }

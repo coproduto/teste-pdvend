@@ -29,6 +29,7 @@ it('renders without crashing', () => {
             md={12}
             messageText=""
             messages={[]}
+            responder={null}
             setMessageText={str => ({
               type: ActionType.SET_MESSAGE_TEXT,
               payload: str,
@@ -36,6 +37,9 @@ it('renders without crashing', () => {
             sendMessage={msg => ({
               type: ActionType.SEND_MESSAGE,
               payload: msg,
+            })}
+            endChat={() => ({
+              type: ActionType.END_CHAT,
             })}
           />
         </Grid>

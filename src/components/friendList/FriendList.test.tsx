@@ -23,6 +23,7 @@ it('renders without crashing', () => {
               type: ActionType.START_CHAT,
               payload: 0,
             })}
+            searchText=""
           />
         </Row>
       </Grid>

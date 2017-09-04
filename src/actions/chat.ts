@@ -15,3 +15,7 @@ export const sendMessage = (msg: Message): Action => ({
   type: ActionType.SEND_MESSAGE,
   payload: msg,
 });
+
+export const endChat = (): Action => ({
+  type: ActionType.END_CHAT,
+});

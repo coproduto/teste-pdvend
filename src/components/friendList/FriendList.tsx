@@ -12,6 +12,7 @@ import './FriendList.css';
 
 interface FriendListProps extends BootstrapMeasurements {
   friends: SimulatedFriend[];
+  searchText: string;
   startChat: (id: number) => Action;
 }
 
@@ -20,10 +21,11 @@ const FriendList = ({
   sm,
   md,
   friends,
+  searchText,
   startChat,
 }: FriendListProps): React.ReactElement<FriendListProps> => (
   <Col xs={xs} sm={sm} md={md} className="friend-list">
-    {friends.map(friend => (
+    {friends.filter(friend => friend.name.startsWith(searchText)).map(friend => (
       <FriendCell
         friendData={friend}
         key={friend.id}
