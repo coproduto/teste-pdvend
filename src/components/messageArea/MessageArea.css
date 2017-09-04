@@ -1,4 +1,10 @@
 .message-area {
   background-color: violet;
   height: 100%;
+  padding: 0;
+}
+
+.message-scroll {
+  height: 100%;
+  overflow-y: auto;
 }

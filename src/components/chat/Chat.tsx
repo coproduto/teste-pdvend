@@ -18,17 +18,24 @@ import { Action } from '../../actions/types';
 import './Chat.css';
 
 interface ChatProps extends BootstrapMeasurements {
+  messages: Message[];
   messageText: string;
   setMessageText: (str: string) => Action;
   sendMessage: (msg: Message) => Action;
 }
 
 const Chat = ({
+  // propriedades de layout
   xsHidden,
   xs,
   sm,
   md,
+
+  // mensagens + nova mensagem
   messageText,
+  messages,
+
+  // ações
   setMessageText,
   sendMessage,
 }: ChatProps): React.ReactElement<ChatProps> => (
@@ -37,7 +44,12 @@ const Chat = ({
       <TitleBar xs={12} sm={12} md={12} />
     </Row>
     <Row className="message-area-container">
-      <MessageArea xs={12} sm={12} md={12} />
+      <MessageArea
+        xs={12}
+        sm={12}
+        md={12}
+        messages={messages}
+      />
     </Row>
     <Row className="message-input-container">
       <MessageInput

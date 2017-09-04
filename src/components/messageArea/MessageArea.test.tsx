@@ -13,7 +13,13 @@ it('renders without crashing', () => {
     (
       <Grid>
         <Row>
-          <MessageArea xsHidden={true} xs={12} sm={12} md={12} />
+        <MessageArea
+          xsHidden={true}
+          xs={12}
+          sm={12}
+          md={12}
+          messages={[]}
+        />
         </Row>
       </Grid>
     ),

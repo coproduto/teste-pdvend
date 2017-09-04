@@ -16,6 +16,7 @@ import {
 
 const mapStateToProps = (state: AppState, ownProps: BootstrapMeasurements) => ({
   messageText: state.messageText,
+  messages: state.messages,
   ...ownProps,
 });
 

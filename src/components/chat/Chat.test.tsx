@@ -16,6 +16,7 @@ it('renders without crashing', () => {
           sm={12}
           md={12}
           messageText=""
+          messages={[]}
           setMessageText={str => ({
             type: ActionType.SET_MESSAGE_TEXT,
             payload: str,
