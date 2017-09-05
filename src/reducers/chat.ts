@@ -38,6 +38,18 @@ const messageText = (state = '', action: Action) => {
   }
 };
 
+const shouldLoadMessages = (state = false, action: Action) => {
+  switch (action.type) {
+    case ActionType.START_CHAT:
+      return true;
+    case ActionType.LOAD_MESSAGES_FULFILLED:
+    case ActionType.END_CHAT:  
+      return false;
+    default:
+      return state;
+  }
+};
+
 const messages = (state: Message[] = [], action: Action) => {
   switch (action.type) {
     case ActionType.SEND_MESSAGE:
@@ -46,8 +58,13 @@ const messages = (state: Message[] = [], action: Action) => {
       } else {
         return state;
       }
+    case ActionType.START_CHAT:
+    case ActionType.END_CHAT:
+      return [];
+    case ActionType.LOAD_MESSAGES_FULFILLED:
+      return action.payload;  
     default:
-      return state;  
+      return state;
   }
 };
 
@@ -66,6 +83,7 @@ const shouldSimulateAnswer = (state = false, action: Action) => {
 export default {
   messageText,
   messages,
+  shouldLoadMessages,
   responder,
   shouldSimulateAnswer,
 };

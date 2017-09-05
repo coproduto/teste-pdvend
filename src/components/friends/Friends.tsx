@@ -15,10 +15,11 @@ import { SimulatedFriend } from '../../lib/friends/types';
 import './Friends.css';
 
 interface FriendsProps extends BootstrapMeasurements {
+  responder: SimulatedFriend | null;
   friends: SimulatedFriend[];
   searchText: string;
   setSearchText: (str: string) => Action;
-  startChat: (id: number) => Action;
+  startChat: (id: number) => Action | null;
 }
 
 const Friends = ({
@@ -26,6 +27,7 @@ const Friends = ({
   xs,
   sm,
   md,
+  responder,
   friends,
   searchText,
   setSearchText,
@@ -48,7 +50,12 @@ const Friends = ({
       md={12}
       friends={friends}
       searchText={searchText}
-      startChat={startChat}
+      startChat={(id: number) => {
+        if (!responder || id !== responder.id) {
+          return startChat(id);
+        }
+        return null;
+      }}
     />
     </Row>
   </Col>

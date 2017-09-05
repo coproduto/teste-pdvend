@@ -5,6 +5,7 @@ import {
   ActionType,
 } from './types';
 import { Message } from '../components/types';
+import * as LocalForage from 'localforage';
 
 export const setMessageText = (str: string): Action => ({
   type: ActionType.SET_MESSAGE_TEXT,
@@ -16,6 +17,12 @@ export const sendMessage = (msg: Message): Action => ({
   payload: msg,
 });
 
-export const endChat = (): Action => ({
-  type: ActionType.END_CHAT,
+export const loadMessages = (id: number): Action => ({
+  type: ActionType.LOAD_MESSAGES,
+  payload: LocalForage.getItem(String(id)).then(item => item || []),
+});
+
+export const saveMessages = (id: number, messages: Message[]): Action => ({
+  type: ActionType.SAVE_MESSAGES,
+  payload: LocalForage.setItem(String(id), messages),
 });

@@ -10,12 +10,14 @@ import Chat from '../chat/Chat';
 import FriendsContainer from '../../containers/Friends';
 import ChatContainer from '../../containers/Chat';
 
+import { ChatProps } from '../chat/Chat';
+
 interface InterfaceProps {
   isInChat: boolean;
 }
 
 const FriendsPanel = FriendsContainer(Friends);
-const ChatPanel = ChatContainer(Chat);
+const ChatPanel = ChatContainer(Chat as React.ComponentType<ChatProps>);
 
 class Interface extends React.Component<InterfaceProps> {
   render() {

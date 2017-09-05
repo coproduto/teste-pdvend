@@ -9,7 +9,7 @@ import './FriendCell.css';
 
 interface FriendCellProps {
   friendData: SimulatedFriend;
-  startChat: (id: number) => Action;
+  startChat: (id: number) => Action | null;
 }
 
 const FriendCell = ({

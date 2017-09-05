@@ -10,6 +10,7 @@ import {
   applyMiddleware,
 } from 'redux';
 import { createLogger } from 'redux-logger';
+import promiseMiddleware from 'redux-promise-middleware';
 import { Provider } from 'react-redux';
 
 // Router
@@ -49,6 +50,7 @@ const store = createStore(
   }),
   initialState,
   applyMiddleware(
+    promiseMiddleware(),
     reduxRouterMiddleware,
     loggerMiddleware,
   ),

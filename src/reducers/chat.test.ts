@@ -98,3 +98,33 @@ describe('responder reducer', () => {
     expect(newState).toBeNull();
   });
 });
+
+describe('shouldLoadMessages reducer', () => {
+  const shouldLoadMessages = chatReducers.shouldLoadMessages;
+  
+  it('returns false on startup', () => {
+    const initialState = shouldLoadMessages(undefined, { type: ActionType.OTHER_ACTION });
+    expect(initialState).toBe(false);
+  });
+
+  it('returns true on chat start', () => {
+    const newState = shouldLoadMessages(false, {
+      type: ActionType.START_CHAT,
+      payload: 0,
+    });
+    expect(newState).toBe(true);       
+  });
+
+  it('returns false on message load', () => {
+    const newState = shouldLoadMessages(true, {
+      type: ActionType.LOAD_MESSAGES_FULFILLED,
+      payload: [],
+    });
+    expect(newState).toBe(false);
+  });
+
+  it('returns false on chat end', () => {
+    const newState = shouldLoadMessages(true, { type: ActionType.END_CHAT });
+    expect(newState).toBe(false);
+  });
+});

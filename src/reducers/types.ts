@@ -11,4 +11,5 @@ export interface AppState {
   messages: Message[];
   responder: SimulatedFriend | null;
   shouldSimulateAnswer: boolean;
+  shouldLoadMessages: boolean;
 }

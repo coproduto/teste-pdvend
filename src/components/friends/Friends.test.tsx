@@ -15,6 +15,7 @@ it('renders without crashing', () => {
           sm={12}
           md={12}
           friends={[]}
+          responder={null}
           searchText=""
           setSearchText={str => ({
             type: ActionType.SET_SEARCH_TEXT,

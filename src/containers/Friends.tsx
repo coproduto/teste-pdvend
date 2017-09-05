@@ -14,6 +14,7 @@ import {
 const mapStateToProps = (state: AppState, ownProps: BootstrapMeasurements) => ({
   searchText: state.searchText,
   friends: state.friends,
+  responder: state.responder,
   ...ownProps,
 });
 

@@ -13,7 +13,7 @@ import './FriendList.css';
 interface FriendListProps extends BootstrapMeasurements {
   friends: SimulatedFriend[];
   searchText: string;
-  startChat: (id: number) => Action;
+  startChat: (id: number) => Action | null;
 }
 
 const FriendList = ({

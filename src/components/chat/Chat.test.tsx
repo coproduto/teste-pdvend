@@ -41,6 +41,9 @@ it('renders without crashing', () => {
             endChat={() => ({
               type: ActionType.END_CHAT,
             })}
+            shouldLoadMessages={false}
+            loadMessages={() => ({ type: ActionType.OTHER_ACTION })}
+            saveMessages={() => ({ type: ActionType.OTHER_ACTION })}
           />
         </Grid>
       </Provider>
