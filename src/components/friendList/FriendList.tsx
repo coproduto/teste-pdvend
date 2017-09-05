@@ -25,12 +25,13 @@ const FriendList = ({
   startChat,
 }: FriendListProps): React.ReactElement<FriendListProps> => (
   <Col xs={xs} sm={sm} md={md} className="friend-list">
-    {friends.filter(friend => friend.name.startsWith(searchText)).map(friend => (
-      <FriendCell
-        friendData={friend}
-        key={friend.id}
-        startChat={startChat}
-      />
+    {friends.filter(friend => friend.name.toLowerCase().startsWith(searchText))
+      .map(friend => (
+        <FriendCell
+          friendData={friend}
+          key={friend.id}
+          startChat={startChat}
+        />
     ))}
   </Col>
 );

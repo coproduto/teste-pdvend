@@ -20,6 +20,7 @@ import { SimulatedFriend } from '../../lib/friends/types';
 import './Chat.css';
 
 export interface ChatProps extends BootstrapMeasurements {
+  isInChat: boolean;
   messages: Message[];
   messageText: string;
   responder: SimulatedFriend | null;
@@ -75,6 +76,7 @@ export default class Chat extends React.Component<ChatProps> {
               xs={12}
               sm={12}
               md={12}
+              isInChat={this.props.isInChat}
               messageText={this.props.messageText}
               setMessageText={this.props.setMessageText}
               sendMessage={str => this.props.sendMessage({

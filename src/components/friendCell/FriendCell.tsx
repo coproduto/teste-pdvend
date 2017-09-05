@@ -20,6 +20,7 @@ const FriendCell = ({
     onClick={() => startChat(friendData.id)}
     className="friend-cell"
   >
+    <a href="#" />
     <div className="friend-avatar">
       <img
         src={avatar({

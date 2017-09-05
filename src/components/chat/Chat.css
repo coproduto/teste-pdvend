@@ -1,6 +1,5 @@
 .chat-area {
   height: 100%;
-  background-color: blue;
 }
 
 .title-bar-container {
@@ -12,13 +11,14 @@
 }
 
 .message-area-container {
-  height: calc(100% - 190px - 105px);
+  height: calc(100% - 100px - 105px);
 }
 
 .message-input-container {
+  border-top: 2px solid #0066FF;
   position: relative;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 190px;
+  height: 100px;
 }

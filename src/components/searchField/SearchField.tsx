@@ -22,7 +22,7 @@ const SearchField = ({
   <Col xs={xs} sm={sm} md={md} className="search-field">
     <input
       value={searchText}
-      onChange={event => setSearchText(event.target.value)}
+      onChange={event => setSearchText(event.target.value.toLowerCase())}
       className="search-input"
     />
   </Col>  

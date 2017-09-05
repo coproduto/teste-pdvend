@@ -1,7 +1,21 @@
 .right-aligned-message {
+  margin-right: 40px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   text-align: right;
 }
 
+.right-aligned-message div {
+  color: #293332;
+}
+
 .left-aligned-message {
+  margin-left: 40px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   text-align: left;
+}
+
+.left-aligned-message div {
+  color: #0066AF;
 }

@@ -26,7 +26,7 @@ const TitleBar = ({
       >
         <img src="left-arrow.svg" alt="Voltar" />
       </div>
-      <div className="title-bar-title">{title}</div>
+      <div className="title-bar-title"><span>{title}</span></div>
     </Col>
 );
 

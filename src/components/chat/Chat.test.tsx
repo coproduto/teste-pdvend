@@ -27,6 +27,7 @@ it('renders without crashing', () => {
             xs={12}
             sm={12}
             md={12}
+            isInChat={true}
             messageText=""
             messages={[]}
             responder={null}

@@ -8,6 +8,7 @@ import { Action } from '../../actions/types';
 import './MessageInput.css';
 
 interface InputProps extends BootstrapMeasurements {
+  isInChat: boolean;
   messageText: string;
   setMessageText: (str: string) => Action;
   sendMessage: (str: string) => Action;
@@ -18,6 +19,7 @@ const MessageInput = ({
   xs,
   sm,
   md,
+  isInChat,
   messageText,
   setMessageText,
   sendMessage,
@@ -31,6 +33,7 @@ const MessageInput = ({
     >
       <input
         value={messageText}
+        disabled={!isInChat}
         onChange={event => setMessageText(event.target.value)}
         onKeyPress={event => {
           if (event && event.key === 'Enter') {

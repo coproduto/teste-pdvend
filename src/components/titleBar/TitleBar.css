@@ -1,5 +1,7 @@
 .title-bar {
-  background-color: crimson;
+  background-color: #4136BC;
+
+  border-bottom: 2px solid #2B247C;
   height: 100%;
   vertical-align: middle;
 }
@@ -22,5 +24,23 @@
 }
 
 .title-bar-title {
+  width: 70%;
+  height: 100%;
+  text-align: center;
+  font-size: 30px;
+  color: white;
   display: inline-block;
+  vertical-align: top;
+}
+
+.title-bar-title:before {
+  content: '';
+  display: inline-block;
+  height: 60%;
+  width: 1px;
+}
+
+.title-bar-title span {
+  display: inline-block;
+  height: 100%;
 }

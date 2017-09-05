@@ -13,7 +13,7 @@ const MessageBox = ({
 }: MessageBoxProps): React.ReactElement<MessageBoxProps> => {
   return (
     <div className="message-box">
-      <span className="message-text">{text}</span>  
+      <div className="message-text">{text}</div>
     </div>  
   );
 };

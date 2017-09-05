@@ -1,5 +1,4 @@
 .search-field {
-  background-color: chartreuse;
   height: 100%;
 }
 
@@ -11,4 +10,6 @@
   bottom: 35%;
   left: 10%;
   right: 10%;
+
+  border-radius: 5px;
 }

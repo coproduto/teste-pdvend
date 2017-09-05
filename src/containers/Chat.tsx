@@ -18,6 +18,7 @@ import {
 import { endChat } from '../actions/app';
 
 const mapStateToProps = (state: AppState, ownProps: BootstrapMeasurements) => ({
+  isInChat: state.isInChat,
   messageText: state.messageText,
   messages: state.messages,
   responder: state.responder,
