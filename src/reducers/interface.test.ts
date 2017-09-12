@@ -1,4 +1,4 @@
-import appReducers from './app';
+import appReducers from './interface';
 import { ActionType } from '../actions/types';
 
 describe('isInChat reducer', () => {
